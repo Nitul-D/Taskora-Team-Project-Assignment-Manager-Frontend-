@@ -20,30 +20,32 @@ A full-stack workspace for assigning team tasks, sharing assignment materials, a
 
 ## Tech stack
 
-| Frontend | React, TypeScript, Vite, Tailwind CSS |
-| Backend | Node.js, Express |
-| Database | MongoDB with Mongoose |
-| Authentication | Clerk |
-| File storage | Cloudinary |
-| Real-time updates | Socket.IO |
-| Client state | Zustand |
+```
+1 - Frontend | React, TypeScript, Vite, Tailwind CSS
+2 - Backend | Node.js, Express
+3 - Database | MongoDB with Mongoose
+4 - Authentication | Clerk
+5 - File storage | Cloudinary
+6 - Real-time updates | Socket.IO
+7 - Client state | Zustand
+```
 
 ## Project structure
 
 ```
 1 - backend/
-       1 - controller/   # API handlers
-       2 - lib/          # Database, admin, uploads, realtime helpers
-       3 - middleware/   # Authentication and access checks
-       4 - models/       # MongoDB models
-       5 - routes/       # API routes
+       1 - controller/   - API handlers
+       2 - lib/          - Database, admin, uploads, realtime helpers
+       3 - middleware/   - Authentication and access checks
+       4 - models/       - MongoDB models
+       5 - routes/       - API routes
 
 2 - frontend/
-        1 - components/   # Shared UI and forms
-        2 - layout/       # Main application layout
-        3 - pages/        # Application screens
-        4 - providers/    # Authentication and app-wide providers
-        5 -stores/       # Zustand state and API actions
+        1 - components/   - Shared UI and forms
+        2 - layout/       - Main application layout
+        3 - pages/        - Application screens
+        4 - providers/    - Authentication and app-wide providers
+        5 - stores/       - Zustand state and API actions
 ```
 
 ## Requirements
