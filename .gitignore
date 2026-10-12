@@ -1,0 +1,48 @@
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+dist-ssr/
+
+# Local env files
+.env*
+!.env.example
+!.env.*.example
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Vite / bundler cache
+.vite/
+.cache/
+.parcel-cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+.nyc_output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE and editors
+.idea/
+.vscode/
+!.vscode/extensions.json
+
+# Misc
+.pnp/
+.pnp.js
+*.tgz
+*.local
