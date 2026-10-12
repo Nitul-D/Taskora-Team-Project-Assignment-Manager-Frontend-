@@ -12,6 +12,28 @@ A full-stack workspace for assigning team tasks, sharing assignment materials, a
 - Keep task, assignment, and presence updates in sync in real time.
 - Show progress summaries for completed and pending tasks.
 
+## Screenshots
+
+### Dashboard
+
+![Taskora dashboard](https://raw.githubusercontent.com/Nitul-D/Taskora-Team-Project-Assignment-Manager-Frontend-/main/docs/Screenshots/dashboard.png)
+
+### Admin panel
+
+![Admin panel with team and progress summaries](https://raw.githubusercontent.com/Nitul-D/Taskora-Team-Project-Assignment-Manager-Frontend-/main/docs/Screenshots/adminpanel.png)
+
+### Assignments
+
+![Create an assignment and attach files](https://raw.githubusercontent.com/Nitul-D/Taskora-Team-Project-Assignment-Manager-Frontend-/main/docs/Screenshots/assignmentcreate.png)
+
+### Tasks
+
+![Task management section](https://raw.githubusercontent.com/Nitul-D/Taskora-Team-Project-Assignment-Manager-Frontend-/main/docs/Screenshots/tasksection.png)
+
+### User management
+
+![Manage team members and admin access](https://raw.githubusercontent.com/Nitul-D/Taskora-Team-Project-Assignment-Manager-Frontend-/main/docs/Screenshots/manageusers.png)
+
 ### Roles and access
 
 - **Team members** see only the tasks and assignments assigned to them. They can update the status of their own tasks.
