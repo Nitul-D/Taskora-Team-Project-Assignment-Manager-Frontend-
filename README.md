@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# Team Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack workspace for assigning team tasks, sharing assignment materials, and tracking progress. Admins can manage work across the team, while each member sees the tasks and assignments assigned to them.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Create assignments and tasks, and assign them to team members.
+- Link tasks to assignments and track task status: **To do**, **Halfway**, or **Completed**.
+- Add optional images and documents to tasks and assignments.
+- View and download shared images and documents.
+- Invite users and manage admin access.
+- Keep task, assignment, and presence updates in sync in real time.
+- Show progress summaries for completed and pending tasks.
 
-## React Compiler
+### Roles and access
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Team members** see only the tasks and assignments assigned to them. They can update the status of their own tasks.
+- **Admins** can see all tasks and assignments, create work, and edit records.
+- **Primary admin** has full control. Other admins cannot delete primary-admin work or change its assignee.
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Frontend | React, TypeScript, Vite, Tailwind CSS |
+| Backend | Node.js, Express |
+| Database | MongoDB with Mongoose |
+| Authentication | Clerk |
+| File storage | Cloudinary |
+| Real-time updates | Socket.IO |
+| Client state | Zustand |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Project structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```
+1 - backend/
+       1 - controller/   # API handlers
+       2 - lib/          # Database, admin, uploads, realtime helpers
+       3 - middleware/   # Authentication and access checks
+       4 - models/       # MongoDB models
+       5 - routes/       # API routes
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2 - frontend/
+        1 - components/   # Shared UI and forms
+        2 - layout/       # Main application layout
+        3 - pages/        # Application screens
+        4 - providers/    # Authentication and app-wide providers
+        5 -stores/       # Zustand state and API actions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Requirements
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Node.js and npm
+- A MongoDB database
+- A Clerk application
+- A Cloudinary account for image and document uploads
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Run locally
+
+### 1. Configure the backend
+
+Create `backend/.env`:
+
+```dotenv
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+CLERK_SECRET_KEY=your_clerk_secret_key
+ADMIN_EMAIL=the_primary_admin_email
+FRONTEND_URL=frontend_url
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+```
+
+### 2. Configure the frontend
+
+Create `frontend/.env`:
+
+```dotenv
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+VITE_API_URL=your_vite_api_url
 ```
